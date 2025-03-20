@@ -4,33 +4,39 @@ using UnityEngine;
 
 public class Tiro: MonoBehaviour
 {
-    public float velocidade = 7f;
-    public bool player = false;
+    private float velocidade = 7f;
+    public GameObject player;
+    public int pts = 0;
+    public GameObject geral;
+    private float tempo;
 
     void Start()
     {
-        if(gameObject.name == "T1")
+        tempo = geral.gameObject.GetComponent<GameManager>().tempo;
+    }
+
+    void OnTriggerEnter2D(Collider2D coll){
+        if(coll.gameObject.tag == "Asteroid")
         {
-            player = true;
+            coll.transform.position = new Vector2(Random.Range(6f, 10f), Random.Range(-3f, 3f));
+            transform.position = new Vector2(0f, -5f);
+            geral.gameObject.GetComponent<GameManager>().AddPts();
         }
     }
 
     void Update()
     {
-        if(player)
+        tempo = geral.gameObject.GetComponent<GameManager>().tempo;
+        if(transform.position.x < 5.5f && transform.position.y >-5)  // Limite da borda direita
         {
-            // O projétil vai da esquerda para a direita (movimento positivo no eixo X)
-            if(transform.position.x < 6)  // Limite da borda direita
-            {
-                transform.Translate(Vector3.right * velocidade * Time.deltaTime);  // Movimento para a direita
-            }
+            transform.Translate(Vector3.right * velocidade * Time.deltaTime * tempo);  // Movimento para a direita
         }
         else
         {
-            // O projétil vai da direita para a esquerda (movimento negativo no eixo X)
-            if(transform.position.x > -6)  // Limite da borda esquerda
+            transform.position = new Vector2(0f, -5f);
+            if(Input.GetKeyDown(KeyCode.Space))
             {
-                transform.Translate(Vector3.left * velocidade / 2 * Time.deltaTime);  // Movimento para a esquerda
+                transform.position = player.transform.position;
             }
         }
     }

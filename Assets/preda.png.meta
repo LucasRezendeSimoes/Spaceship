@@ -370,7 +370,18 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      preda_0: 4918967598452339443
+      preda_1: -1640826630176887129
+      preda_10: -5037505077761013916
+      preda_2: 8017756812983585923
+      preda_3: -2974367978037951176
+      preda_4: -5121151789486602417
+      preda_5: -4097500685116389920
+      preda_6: -864439789685998602
+      preda_7: -7540058499596150848
+      preda_8: 8415243337177148068
+      preda_9: 7309895125972416905
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

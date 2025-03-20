@@ -8,5 +8,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Jogo.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Perdeu.unity
+    guid: 764dfc94beef99648aee21b79f72977a
+  - enabled: 1
+    path: Assets/Scenes/Ganhou.unity
+    guid: 87d80a09076f1b442b5ed9f463712246
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
